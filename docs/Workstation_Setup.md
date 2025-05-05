@@ -172,7 +172,7 @@ echo 'export WINHOME=$(wslpath "$(wslvar USERPROFILE)")' >> ~/.bashrc
 echo 'alias cdwin="cd $WINHOME"' >> ~/.bashrc
 
 # Configure Windows Terminal settings (if installed)
-TERMINAL_SETTINGS="$WINDOWS_HOME/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"
+TERMINAL_SETTINGS="$WINHOME/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"
 if [ -f "$TERMINAL_SETTINGS" ]; then
   echo "Windows Terminal found. Review settings at: $TERMINAL_SETTINGS"
 fi
