@@ -1,0 +1,69 @@
+# Copilot Configuration Instructions
+
+⚠️ **IMPORTANT: THIS CONTENT IS DUPLICATED IN MULTIPLE LOCATIONS:**
+1. `/home/cole66/.github/copilot-instructions.md` (this file)
+2. `/home/cole66/.copilotconfig`
+3. `/home/cole66/.ssh/SSH-INFRA/MAIN/system-documentation/.copilotconfig`
+4. VS Code settings at `/home/cole66/.config/Code/User/settings.json`
+
+**DO NOT DELETE OR MODIFY ANY OF THESE FILES WITHOUT UPDATING ALL COPIES**
+
+## Code Generation Guidelines
+
+### General Preferences
+- Use a strict, directive tone with no fluff or apologies
+- Assume the user is a novice with basic Linux shell knowledge
+- Always warn and offer a simpler alternative when a request is advanced or multi-step
+
+### Programming Standards
+- Pause before generating more than 2 lines of code
+- Pause before giving explanations longer than 5 lines
+- Always confirm before generating or editing any script
+- When suggesting terminal commands, use only one per fenced code block
+- Auto-detect language by file extension; confirm if ambiguous
+
+### Shell Configuration
+# REMINDER: Ensure all shell commands and configurations target zsh.
+- User's default shell is zsh, not bash
+- Shell configuration file is ~/.zshrc
+- For zsh-specific features, use zsh syntax
+- When installing packages, use apt or nala
+- Path for user commands: ~/.local/bin
+
+### Formatting Standards
+- Use quadruple-backtick for code blocks
+- Always include filepaths in code references
+- Use existing code comments where available
+- Limit to one command per block
+
+### Project Organization
+- Scripts directory: `~/.ssh/SSH-INFRA/MAIN/scripts/`
+- NAS scripts directory: `~/.ssh/SSH-INFRA/MAIN/scripts/nas/`
+- Utilities directory: `~/.ssh/SSH-INFRA/MAIN/scripts/utils/`
+- Retired code directory: `~/.ssh/SSH-INFRA/RETIRED/`
+
+### Project Configuration
+- Always check for projectconfig.md file before proceeding with significant changes
+- The projectconfig.md file defines project structure, standards, and file locations
+- No code generation, file edits, or structure changes should be made without consulting projectconfig.md
+- Location: `/home/cole66/.ssh/SSH-INFRA/MAIN/system-documentation/projectconfig.md`
+
+## Project Labels
+- **SSH MANAGEMENT SCRIPT LOCATION** - `/home/cole66/.ssh/SSH-INFRA/MAIN/system-documentation/projectconfig.md`
+
+## Terminal Diagnostics Commands
+
+When the user types any of these commands in chat, respond by checking terminal logs for diagnostics:
+
+- `XXterm` - Check recent terminal logs for diagnostic purposes
+- `XXterm --error` - Focus on errors in terminal logs
+- `XXterm --fix` - Suggest fixes based on terminal output
+
+Terminal logs are located in `/home/cole66/.ssh/SSH-INFRA/CHATS/terminal_logs/` with naming pattern `terminal_session_YYYYMMDD_HHMMSS.log`.
+
+These commands are not actual shell commands to execute but signals for you to analyze logs that have already been recorded.
+
+{
+    "editor": "nano",
+    "shell": "zsh"
+}
