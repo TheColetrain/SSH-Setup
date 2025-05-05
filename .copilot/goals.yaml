@@ -1,0 +1,29 @@
+# Workstation SSH & Configuration Goals
+
+user: TheColetrain
+overall_objective: Standardize and simplify SSH key management and workflow across multiple workstations (Gigabyte-C, Opti7090_O, XPS15-Laptop) for accessing GitHub using Windows as the primary environment.
+repo_purpose: Central, version-controlled location for setup notes, goals, and relevant config files.
+
+status:
+  - Machine: Gigabyte-C
+    SSH_Key: Migrated from WSL to Windows (~/.ssh/Gigabyte-C)
+    SSH_Config: Windows ~/.ssh/config updated for github.com
+    SSH_Agent: Configured via Git Bash startup files
+    Auth_Test: 'ssh -T git@github.com' successful
+    Repo_Sync: This repository (SSH-Setup) cloned via SSH, remote updated to SSH URL.
+  - Machine: Opti7090_O
+    Status: Pending setup
+  - Machine: XPS15-Laptop
+    Status: Pending setup
+  - Key_Backup: Procedure defined (Bitwarden)
+
+next_steps:
+  - action: Configure SSH Key and Agent on Opti7090_O
+    details: Follow steps documented in docs/Gigabyte-C_Initial_Setup.md, using Opti7090_O key and user profile. Add public key to GitHub. Test SSH auth. Clone this repo via SSH.
+  - action: Configure SSH Key and Agent on XPS15-Laptop
+    details: Follow steps documented in docs/Gigabyte-C_Initial_Setup.md, using XPS15-Laptop key and user profile. Add public key to GitHub. Test SSH auth. Clone this repo via SSH.
+
+longer_term_goals:
+  - VS Code Git integration check on all workstations.
+  - WSL Git configuration review (ensure using WSL keys).
+  - Review GitHub SSH keys, remove unused ones.
